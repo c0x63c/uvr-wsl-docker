@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -Eeuo pipefail
+declare -A MOUNTS
+
+# mount folders
+MOUNTS["/uvr5/models"]="/volumes/models"
+MOUNTS["/uvr5/inputs"]="/volumes/inputs"
+MOUNTS["/uvr5/outputs"]="/volumes/outputs"
+
+# make symbolik link and copy target dir under the files.
+for to_path in "${!MOUNTS[@]}"; do
+  set -Eeuo pipefail
+  from_path="${MOUNTS[${to_path}]}"
+  if [ ! -f "$from_path" ]; then
+    mkdir -vp "$from_path"
+  fi
+  if [ -d "$to_path" ]; then
+    to_path_file="${to_path}/*"
+    if [ -n "$(ls $to_path_file 2> /dev/null)" ]; then
+      cp -f -p -r $to_path_file $from_path 2> /dev/null
+    fi
+  fi
+  rm -r -f "${to_path}"
+  mkdir -vp "$(dirname "${to_path}")"
+  ln -sT "${from_path}" "${to_path}"
+  echo Mounted $(basename "${from_path}")
+done
+
+eval "$@"

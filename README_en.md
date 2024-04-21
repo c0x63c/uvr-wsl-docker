@@ -41,5 +41,6 @@ volumes/ouputs→ultimatevocalremovergui/ouputs
 ## Acknowledgments
 
 * [ultimatevocalremovergui](https://github.com/Anjok07/ultimatevocalremovergui)
-* [nVidia 525 + Cuda 11.8 + Python 3.10 + pyTorch GPU Docker image](https://dev.to/ordigital/nvidia-525-cuda-118-python-310-pytorch-gpu-docker-image-1l4a)
 * [docker で cypress の gui を動かす](https://mogura.dev/articles/2022/run-cypress-gui-in-docker/)
+* [nVidia 525 + Cuda 11.8 + Python 3.10 + pyTorch GPU Docker image](https://dev.to/ordigital/nvidia-525-cuda-118-python-310-pytorch-gpu-docker-image-1l4a)
+* [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) 

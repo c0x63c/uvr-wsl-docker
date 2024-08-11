@@ -1,8 +1,8 @@
 ### Description
 
-* This is a docker compose (GPU support) for WSL2 of UVR.
-* Folders under volumes are treated as symbolic links in docker, so you don't need to copy local files into docker.
-* windows can be displayed on windows via wsl2 via Xwindows.
+* UVRのWSL2向けdocker compose(GPU対応)です.
+* 特徴としては,volumes配下のフォルダはdocker内でシンボリックリンクとして扱われる為,ローカルのファイルをdocker内にいちいちコピーする必要はありません.
+* Xwindowsを経由して,ウィンドウをwsl2経由でwindowsに表示できます.
 
 ### Prerequisites
 
@@ -10,25 +10,25 @@
 * NVidia video card (RTX3060 12GB)
 * WSL2 (32GB and operation confirmed on Ubuntu 20.04)
 
-*Not confirmed in other configurations than those listed above.
+*上記以外の構成では未確認.
 
 ### Installing
 
-* Build Docker with the following command
+* 以下のコマンドでDockerをビルド.
 ```
 docker compose build
 ```
 
 ## Usage
 
-* After installing, do the following.
+* Installing実行後に以下を実行.
 ```
 docker compose up
 ```
 
-* Directory Overview.
+* ディレクトリ概要.
 ```
-#links under volumes.
+#volumes配下のリンク先.
 volumes/models→ultimatevocalremovergui/models
 volumes/inputs→ultimatevocalremovergui/inputs
 volumes/ouputs→ultimatevocalremovergui/ouputs
@@ -36,7 +36,7 @@ volumes/ouputs→ultimatevocalremovergui/ouputs
 
 ## Version
 
-* 2024/04/21
+* 2024/08/12
 
 ## Acknowledgments
 
